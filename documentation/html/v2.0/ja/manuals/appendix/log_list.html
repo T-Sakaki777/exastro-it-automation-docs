@@ -148,240 +148,89 @@
   <section id="exastro-it-automation">
 <h1>Exastro IT Automation ログ一覧<a class="headerlink" href="#exastro-it-automation" title="この見出しへのパーマリンク">¶</a></h1>
 <div class="line-block">
-<div class="line">Exastro IT Automationの各コンテナの出力メッセージに関するログについては以下の通りです。</div>
+<div class="line">Exastro IT Automationの各コンテナの出力メッセージに関するログについて。</div>
+<div class="line">コンテナごとにログの例と文字列の意味を以下に記載します。</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%(asctime)s %(levelname)s (%(userid)s) %(pathname)s(%(lineno)d) %(message)s
+例：2023/01/11 11:27:05.976995 INFO (None) /app/platform_init.py(88) platform initialize setting start
+</pre></div>
 </div>
 <table class="docutils align-left" id="id1">
-<caption><span class="caption-text">ログ一覧</span><a class="headerlink" href="#id1" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-text">platform-job</span><a class="headerlink" href="#id1" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
+<col style="width: 16.7%" />
 <col style="width: 25.0%" />
 <col style="width: 25.0%" />
-<col style="width: 50.0%" />
+<col style="width: 33.3%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>No</p></th>
-<th class="head"><p>ログの種類</p></th>
+<tr class="row-odd"><th class="head"><p>フォーマット文字列</p></th>
+<th class="head"><p>フォーマットの意味</p></th>
+<th class="head"><p>ログの例</p></th>
+<th class="head"><p>備考</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>%(asctime)s</p></td>
+<td><p>ログ出力日時</p></td>
+<td><p>2023/01/11 11:27:05.976995</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>%(levelname)s</p></td>
+<td><p>メッセージレベル</p></td>
+<td><p>INFO</p></td>
+<td><p>DEBUG, INFO, WARNING, ERROR, CRITICAL が出力される。</p></td>
+</tr>
+<tr class="row-even"><td><p>(%(userid)s)</p></td>
+<td><p>アクセスユーザー（Noneは指定なし）</p></td>
+<td><p>（None）</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>%(pathname)s</p></td>
+<td><p>ログ出力元のソース</p></td>
+<td><p>/app/platform_init.py</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>(%(lineno)d)</p></td>
+<td><p>ログ出力元の行</p></td>
+<td><p>(88)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>%(message)s</p></td>
+<td><p>メッセージ</p></td>
+<td><p>platform initialize setting start</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-left" id="id2">
+<caption><span class="caption-text">platform-api</span><a class="headerlink" href="#id2" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
 <th class="head"><div class="line-block">
-<div class="line">ログの説明</div>
-<div class="line">(複数行)</div>
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
 </div>
 </th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><div class="line-block">
-<div class="line">devcontainer-platform-api-1</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">%(asctime)s %(levelname)s (%(userid)s) %(pathname)s (%(lineno)d) %(message)s</div>
-<div class="line"><br /></div>
-<div class="line">%(asctime)s ログ出力日時</div>
-<div class="line">%(levelname)s メッセージレベル</div>
-<div class="line">(%(userid)s) アクセスユーザー（Noneは指定なし）</div>
-<div class="line">%(pathname)s ログ出力元のソース</div>
-<div class="line">(%(lineno)d) ログ出力元の行</div>
-<div class="line">%(message)s メッセージ</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>devcontainer-platform-job-1</p></td>
-<td><p>No.1（evcontainer-platform-api-1）と同じフォーマット</p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>devcontainer-platform-web-1</p></td>
-<td><div class="line-block">
-<div class="line">LogFormat &quot;%h %l %u %t &quot;%r&quot; %&gt;s %b &quot;%{Referer}i&quot; &quot;%{User-Agent}i&quot;&quot; combined </div>
-<div class="line">LogFormat &quot;%h %l %u %t &quot;%r&quot; %&gt;s %b&quot; common </div>
-<div class="line">&lt;IfModule logio_module&gt; </div>
-<div class="line"># You need to enable mod_logio.c to use %I and %O </div>
-<div class="line">LogFormat &quot;%h %l %u %t &quot;%r&quot; %&gt;s %b &quot;%{Referer}i&quot; &quot;%{User-Agent}i&quot; %I %O&quot; combinedio </div>
-<div class="line">&lt;/IfModule&gt;</div>
-<div class="line"><br /></div>
-<div class="line">デフォルトのapacheログ形式となっており、commonでログ保存を指定した場合は以下の内容。</div>
-<div class="line">%h    アクセス元のホスト名</div>
-<div class="line">%l    クライアントの識別子</div>
-<div class="line">%u    認証ユーザー名</div>
-<div class="line">%t    リクエストを受け付けた時刻</div>
-<div class="line">%r リクエストの最初の行の値</div>
-<div class="line">%&gt;s   最後のレスポンスのステータス</div>
-<div class="line">%b    送信されたバイト数</div>
-<div class="line"><br /></div>
-<div class="line">combinedフォーマットは上記に加え以下が追加されている。</div>
-<div class="line">%{Referer}i    リファラー</div>
-<div class="line">%{User-Agent}i User Agent</div>
-<div class="line"><br /></div>
-<div class="line">combinedioフォーマットはさらに以下の項目が追加されている。</div>
-<div class="line"><br /></div>
-<div class="line">%I  受け取ったバイト数</div>
-<div class="line">%O  送信したバイト数</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><div class="line-block">
-<div class="line">devcontainer-platform-auth-1</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">上記2つ（devcontainer-platform-api-1、devcontainer-platform-web-1）の</div>
-<div class="line">混合ログが出力される。</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><div class="line-block">
-<div class="line">devcontainer-platform-db-1</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">mariadbのログに準拠している。</div>
-<div class="line">（DBについては、使用するデータベースのログフォーマットとなる。）</div>
-<div class="line">設定もデータベースによるが、デフォルトでmariadbを立ち上げた際は</div>
-<div class="line">エラーログが出力される。</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><div class="line-block">
-<div class="line">devcontainer-keycloak-1</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c] （%t） %s%e%n</div>
-<div class="line"><br /></div>
-<div class="line">%d{yyyy-MM-dd HH:mm:ss,SSS}            ログ出力日時</div>
-<div class="line">%-5p   エラーレベル（DEBUG, INFO, WARN, ERROR）</div>
-<div class="line">%c             ログ カテゴリ名</div>
-<div class="line">%t             スレッド名</div>
-<div class="line">%s             簡単なメッセージ</div>
-<div class="line">%e             例外</div>
-<div class="line">%n             改行</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><div class="line-block">
-<div class="line">devcomtainer-ita-api-admin</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">日付　ログレベル ユーザID フリーエリア</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>8</p></td>
-<td><div class="line-block">
-<div class="line">devcontainer-phpmyadmin-1</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">開発用のコンテナ</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>9</p></td>
-<td><div class="line-block">
-<div class="line">devcontainer-ita-web-server-1</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">No.3 同様、apacheのログが出力されている。</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>10</p></td>
-<td><div class="line-block">
-<div class="line">ita-api-organization</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">日付 ログレベル フリーエリア</div>
-<div class="line">ERROR, INFO, DEBUGが基本的なログレベル</div>
-<div class="line">ERRORログは1000種類近くあり、その内容次第で対応を取る。</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>11</p></td>
-<td><div class="line-block">
-<div class="line">devcontainer-ita-mariadb</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">mariadbのログに準拠している。</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>12</p></td>
-<td><div class="line-block">
-<div class="line">devcontainer-ita-by-ansible-legacy-role-vars-listup-1</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">日付 ログレベル フリーエリア</div>
-<div class="line">初期設定の状態ではログを見ることができない※1</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>13</p></td>
-<td><div class="line-block">
-<div class="line">devcontainer-ita-by-menu-create</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">日付 ログレベル フリーエリア</div>
-<div class="line">初期設定の状態ではログを見ることができない※1</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>14</p></td>
-<td><div class="line-block">
-<div class="line">devcontainer-ita-by-ansible-execute</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">日付 ログレベル フリーエリア</div>
-<div class="line">初期設定の状態ではログを見ることができない※1</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>15</p></td>
-<td><div class="line-block">
-<div class="line">devcontainer-ita-by-ansible-towermaster-sync-1</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">日付 ログレベル フリーエリア</div>
-<div class="line">初期設定の状態ではログを見ることができない※1</div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-text">platform-job
- :widths: 10 10 20
- :header-rows: 1
- :align: left</span><a class="headerlink" href="#id2" title="このテーブルへのパーマリンク">¶</a></caption>
-<tbody>
-<tr class="row-odd"><td><div class="line-block">
-<div class="line">フォーマット文字列</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">フォーマットの意味</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">ログの例</div>
-</div>
-</td>
-<td><div class="line-block">
-<div class="line">備考</div>
-</div>
-</td>
-</tr>
 <tr class="row-even"><td><div class="line-block">
 <div class="line">%(asctime)s</div>
 </div>
@@ -486,10 +335,6 @@
 </tr>
 </tbody>
 </table>
-<div class="line-block">
-<div class="line">※1</div>
-</div>
-<p>コンテナごとにリスト作成に変更</p>
 </section>
 
 
