@@ -124,7 +124,11 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">Exastro IT Automation ログ一覧</a></li>
+<li><a class="reference internal" href="#">Exastro IT Automation ログ一覧</a><ul>
+<li><a class="reference internal" href="#platform-job">platform-job</a></li>
+<li><a class="reference internal" href="#platform-api">platform-api</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -151,12 +155,13 @@
 <div class="line">Exastro IT Automationの各コンテナの出力メッセージに関するログについて。</div>
 <div class="line">コンテナごとにログの例と文字列の意味を以下に記載します。</div>
 </div>
+<section id="platform-job">
+<h2>platform-job<a class="headerlink" href="#platform-job" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%(asctime)s %(levelname)s (%(userid)s) %(pathname)s(%(lineno)d) %(message)s
 例：2023/01/11 11:27:05.976995 INFO (None) /app/platform_init.py(88) platform initialize setting start
 </pre></div>
 </div>
-<table class="docutils align-left" id="id1">
-<caption><span class="caption-text">platform-job</span><a class="headerlink" href="#id1" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left">
 <colgroup>
 <col style="width: 16.7%" />
 <col style="width: 25.0%" />
@@ -203,12 +208,18 @@
 </tr>
 </tbody>
 </table>
-<table class="docutils align-left" id="id2">
-<caption><span class="caption-text">platform-api</span><a class="headerlink" href="#id2" title="このテーブルへのパーマリンク">¶</a></caption>
+</section>
+<section id="platform-api">
+<h2>platform-api<a class="headerlink" href="#platform-api" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%(asctime)s %(levelname)s (%(userid)s) %(pathname)s(%(lineno)d) %(message)s
+例：2023/01/06 10:15:47.537174 INFO (2d6aabce-04c7-4938-a616-fa283cd6693) /app/common_library/common/api_keycloak_roles.py(372) Get keycloak user list for each role. realm_name=org3, client_id=743c50ae-7656-40d2-9ac1-b6cc6e39d15c, role_name=_workspace-1-admin
+</pre></div>
+</div>
+<table class="docutils align-left">
 <colgroup>
 <col style="width: 16.7%" />
-<col style="width: 16.7%" />
-<col style="width: 33.3%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
 <col style="width: 33.3%" />
 </colgroup>
 <thead>
@@ -240,7 +251,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">2023/01/11 11:27:05.976995</div>
+<div class="line">2023/01/06 10:15:47.537174</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -274,7 +285,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">（None）</div>
+<div class="line">(2d6aabce-04c7-4938-a616-fa283cd6693)</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -291,7 +302,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">/app/platform_init.py</div>
+<div class="line">/app/common_library/common/api_keycloak_roles.py</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -308,7 +319,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">(88)</div>
+<div class="line">(372)</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -335,6 +346,7 @@
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 
 
