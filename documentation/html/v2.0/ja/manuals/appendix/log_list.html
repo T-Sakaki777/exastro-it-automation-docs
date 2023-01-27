@@ -127,6 +127,8 @@
 <li><a class="reference internal" href="#">Exastro IT Automation ログ一覧</a><ul>
 <li><a class="reference internal" href="#platform-job">platform-job</a></li>
 <li><a class="reference internal" href="#platform-api">platform-api</a></li>
+<li><a class="reference internal" href="#platform-web">platform-web</a></li>
+<li><a class="reference internal" href="#keycloak">keycloak</a></li>
 </ul>
 </li>
 </ul>
@@ -153,7 +155,7 @@
 <h1>Exastro IT Automation ログ一覧<a class="headerlink" href="#exastro-it-automation" title="この見出しへのパーマリンク">¶</a></h1>
 <div class="line-block">
 <div class="line">Exastro IT Automationの各コンテナの出力メッセージに関するログについて。</div>
-<div class="line">コンテナごとにログの例と文字列の意味を以下に記載します。</div>
+<div class="line">各コンテナのログの例と文字列の意味を以下に記載します。</div>
 </div>
 <section id="platform-job">
 <h2>platform-job<a class="headerlink" href="#platform-job" title="この見出しへのパーマリンク">¶</a></h2>
@@ -337,6 +339,429 @@
 </td>
 <td><div class="line-block">
 <div class="line">platform initialize setting start</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="platform-web">
+<h2>platform-web<a class="headerlink" href="#platform-web" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">デフォルトのapacheログ形式になっています。</div>
+<div class="line">設定内容は以下の通りです。</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LogFormat</span> <span class="s2">&quot;%h %l </span><span class="si">%u</span><span class="s2"> %t </span><span class="se">\&quot;</span><span class="si">%r</span><span class="se">\&quot;</span><span class="s2"> %&gt;s %b </span><span class="se">\&quot;</span><span class="s2">%</span><span class="si">{Referer}</span><span class="s2">i</span><span class="se">\&quot;</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">%{User-Agent}i</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="n">combined</span> \
+<span class="n">LogFormat</span> <span class="s2">&quot;%h %l </span><span class="si">%u</span><span class="s2"> %t </span><span class="se">\&quot;</span><span class="si">%r</span><span class="se">\&quot;</span><span class="s2"> %&gt;s %b&quot;</span> <span class="n">common</span> \
+<span class="o">&lt;</span><span class="n">IfModule</span> <span class="n">logio_module</span><span class="o">&gt;</span> \
+  <span class="c1"># You need to enable mod_logio.c to use %I and %O \</span>
+  <span class="n">LogFormat</span> <span class="s2">&quot;%h %l </span><span class="si">%u</span><span class="s2"> %t </span><span class="se">\&quot;</span><span class="si">%r</span><span class="se">\&quot;</span><span class="s2"> %&gt;s %b </span><span class="se">\&quot;</span><span class="s2">%</span><span class="si">{Referer}</span><span class="s2">i</span><span class="se">\&quot;</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">%{User-Agent}i</span><span class="se">\&quot;</span><span class="s2"> %I %O&quot;</span> <span class="n">combinedio</span> \
+<span class="o">&lt;/</span><span class="n">IfModule</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">commonフォーマットは以下の構成になっています。</div>
+<div class="line">ログの保存としてcommonを指定した場合は表の情報が一行で記録されていきます。</div>
+</div>
+<table class="docutils align-left" id="id1">
+<caption><span class="caption-text">commonでログ保存を指定した場合</span><a class="headerlink" href="#id1" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%h</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">アクセス元のホスト名</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%l</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">クライアントの識別子</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">&amp;u</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">認証ユーザ名</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%t</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">リクエストを受け付けた時刻</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%r</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">リクエストの最初の行</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%&gt;s</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">最後のレスポンスのステータス</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%b</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">送信されたバイト数</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">combinedフォーマットは、commonフォーマットに以下の項目が追加されています。</div>
+</div>
+<table class="docutils align-left" id="id2">
+<caption><span class="caption-text">combinedフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id2" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%{Referer}i</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">リファラー</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%{User-Agent}i</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">User Agent</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">combinedioフォーマットは、combinedフォーマットに以下の項目が追加されています。</div>
+</div>
+<table class="docutils align-left" id="id3">
+<caption><span class="caption-text">combinedioフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id3" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">&amp;I</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">受け取ったバイト数</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%O</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">送信したバイト</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="keycloak">
+<h2>keycloak<a class="headerlink" href="#keycloak" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c] (%t) %s%e%n
+例：2023-01-12 09:21:49,040 INFO  [org.keycloak.events] (default task-13) type=INTROSPECT_TOKEN, realmId=org3, clientId=system-org3-auth, userId=null, ipAddress=172.18.0.14, client_auth_method=client-secret
+</pre></div>
+</div>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%d{yyyy-MM-dd HH:mm:ss,SSS}</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログ出力日時</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">2023-01-12 09:21:49,040</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%-5p</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">エラーレベル（DEBUG, INFO, WARN, ERROR）</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">INFO</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">[%c]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログ　カテゴリ名</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">[org.keycloak.events]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">(%t)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">スレッド名</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">(default task-13)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">$s</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">簡単なメッセージ</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
 </div>
 </td>
 <td><div class="line-block">
