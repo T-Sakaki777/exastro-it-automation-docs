@@ -128,7 +128,10 @@
 <li><a class="reference internal" href="#platform-job">platform-job</a></li>
 <li><a class="reference internal" href="#platform-api">platform-api</a></li>
 <li><a class="reference internal" href="#platform-web">platform-web</a></li>
+<li><a class="reference internal" href="#platform-auth">platform-auth</a></li>
 <li><a class="reference internal" href="#keycloak">keycloak</a></li>
+<li><a class="reference internal" href="#platform-db">platform-db</a></li>
+<li><a class="reference internal" href="#ita-api-organization">ita-api-organization</a></li>
 </ul>
 </li>
 </ul>
@@ -159,16 +162,16 @@
 </div>
 <section id="platform-job">
 <h2>platform-job<a class="headerlink" href="#platform-job" title="この見出しへのパーマリンク">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%(asctime)s %(levelname)s (%(userid)s) %(pathname)s(%(lineno)d) %(message)s
-例：2023/01/11 11:27:05.976995 INFO (None) /app/platform_init.py(88) platform initialize setting start
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>形式：%(asctime)s %(levelname)s (%(userid)s) %(pathname)s(%(lineno)d) %(message)s
+例　：2023/01/11 11:27:05.976995 INFO (None) /app/platform_init.py(88) platform initialize setting start
 </pre></div>
 </div>
 <table class="docutils align-left">
 <colgroup>
-<col style="width: 16.7%" />
-<col style="width: 25.0%" />
-<col style="width: 25.0%" />
-<col style="width: 33.3%" />
+<col style="width: 15.4%" />
+<col style="width: 23.1%" />
+<col style="width: 30.8%" />
+<col style="width: 30.8%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>フォーマット文字列</p></th>
@@ -213,16 +216,16 @@
 </section>
 <section id="platform-api">
 <h2>platform-api<a class="headerlink" href="#platform-api" title="この見出しへのパーマリンク">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%(asctime)s %(levelname)s (%(userid)s) %(pathname)s(%(lineno)d) %(message)s
-例：2023/01/06 10:15:47.537174 INFO (2d6aabce-04c7-4938-a616-fa283cd6693) /app/common_library/common/api_keycloak_roles.py(372) Get keycloak user list for each role. realm_name=org3, client_id=743c50ae-7656-40d2-9ac1-b6cc6e39d15c, role_name=_workspace-1-admin
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>形式：%(asctime)s %(levelname)s (%(userid)s) %(pathname)s(%(lineno)d) %(message)s
+例　：2023/01/06 10:15:47.537174 INFO (2d6aabce-04c7-4938-a616-fa283cd6693) /app/common_library/common/api_keycloak_roles.py(372) Get keycloak user list for each role. realm_name=org3, client_id=743c50ae-7656-40d2-9ac1-b6cc6e39d15c, role_name=_workspace-1-admin
 </pre></div>
 </div>
 <table class="docutils align-left">
 <colgroup>
-<col style="width: 16.7%" />
-<col style="width: 25.0%" />
-<col style="width: 25.0%" />
-<col style="width: 33.3%" />
+<col style="width: 15.4%" />
+<col style="width: 23.1%" />
+<col style="width: 30.8%" />
+<col style="width: 30.8%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
@@ -367,13 +370,18 @@
 <div class="line">commonフォーマットは以下の構成になっています。</div>
 <div class="line">ログの保存としてcommonを指定した場合は表の情報が一行で記録されていきます。</div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>例：192.168.128.2 - - [12/Jan/2023:15:38:10 +0900] &quot;GET /favicon.ico/platform/ HTTP/1.1&quot; 200 9817
+&quot;http://localhost:8000/org3/platform/roles&quot; &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+(KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36&quot;
+</pre></div>
+</div>
 <table class="docutils align-left" id="id1">
 <caption><span class="caption-text">commonでログ保存を指定した場合</span><a class="headerlink" href="#id1" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 16.7%" />
-<col style="width: 25.0%" />
-<col style="width: 25.0%" />
-<col style="width: 33.3%" />
+<col style="width: 15.4%" />
+<col style="width: 23.1%" />
+<col style="width: 30.8%" />
+<col style="width: 30.8%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
@@ -404,7 +412,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">192.168.128.2</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -421,7 +429,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">-</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -438,7 +446,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">-</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -455,7 +463,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">[12/Jan/2023:15:38:10 +0900]</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -472,7 +480,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">&quot;GET /favicon.ico/platform/ HTTP/1.1&quot;</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -489,7 +497,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">200</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -506,7 +514,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">9817</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -522,10 +530,10 @@
 <table class="docutils align-left" id="id2">
 <caption><span class="caption-text">combinedフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id2" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 16.7%" />
-<col style="width: 25.0%" />
-<col style="width: 25.0%" />
-<col style="width: 33.3%" />
+<col style="width: 15.4%" />
+<col style="width: 23.1%" />
+<col style="width: 30.8%" />
+<col style="width: 30.8%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
@@ -556,11 +564,11 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">&quot;<a class="reference external" href="http://localhost:8000/org3/platform/roles">http://localhost:8000/org3/platform/roles</a>&quot;</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">リファラーとは参照元ページのことです。</div>
 </div>
 </td>
 </tr>
@@ -573,11 +581,11 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36&quot;</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">User Agent とは、使用しているOS・ブラウザなどの情報のことです。</div>
 </div>
 </td>
 </tr>
@@ -589,10 +597,10 @@
 <table class="docutils align-left" id="id3">
 <caption><span class="caption-text">combinedioフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id3" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 16.7%" />
-<col style="width: 25.0%" />
-<col style="width: 25.0%" />
-<col style="width: 33.3%" />
+<col style="width: 15.4%" />
+<col style="width: 23.1%" />
+<col style="width: 30.8%" />
+<col style="width: 30.8%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
@@ -623,7 +631,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">-</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -640,7 +648,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">-</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -651,18 +659,25 @@
 </tbody>
 </table>
 </section>
+<section id="platform-auth">
+<h2>platform-auth<a class="headerlink" href="#platform-auth" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">authログは、上述のapacheログとapiログの混合されたものが出力されますが、</div>
+<div class="line">apacheログ（platform-web）とほとんど同じです。</div>
+</div>
+</section>
 <section id="keycloak">
 <h2>keycloak<a class="headerlink" href="#keycloak" title="この見出しへのパーマリンク">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c] (%t) %s%e%n
-例：2023-01-12 09:21:49,040 INFO  [org.keycloak.events] (default task-13) type=INTROSPECT_TOKEN, realmId=org3, clientId=system-org3-auth, userId=null, ipAddress=172.18.0.14, client_auth_method=client-secret
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>形式：%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c] (%t) %s%e%n
+例　：2023-01-12 09:21:49,040 INFO  [org.keycloak.events] (default task-13) type=INTROSPECT_TOKEN, realmId=org3, clientId=system-org3-auth, userId=null, ipAddress=172.18.0.14, client_auth_method=client-secret
 </pre></div>
 </div>
 <table class="docutils align-left">
 <colgroup>
-<col style="width: 16.7%" />
-<col style="width: 25.0%" />
-<col style="width: 25.0%" />
-<col style="width: 33.3%" />
+<col style="width: 15.4%" />
+<col style="width: 23.1%" />
+<col style="width: 30.8%" />
+<col style="width: 30.8%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="line-block">
@@ -753,7 +768,7 @@
 </td>
 </tr>
 <tr class="row-even"><td><div class="line-block">
-<div class="line">$s</div>
+<div class="line">%s</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -769,8 +784,58 @@
 </div>
 </td>
 </tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%e</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">例外</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%n</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">改行</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
 </tbody>
 </table>
+<div class="line-block">
+<div class="line">keycloakのログの詳細については以下のURLをご参照ください。</div>
+<div class="line"><a class="reference external" href="https://www.keycloak.org/server/logging">https://www.keycloak.org/server/logging</a></div>
+</div>
+</section>
+<section id="platform-db">
+<h2>platform-db<a class="headerlink" href="#platform-db" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">DBについては使用するデータベースのログフォーマットとなります。</div>
+<div class="line">設定もDBによりますが、デフォルトでmariadbを立ち上げた際はエラーログが出力されます。</div>
+<div class="line">詳細は下記URLをご参照ください。</div>
+<div class="line"><a class="reference external" href="https://mariadb.com/kb/en/error-log/">https://mariadb.com/kb/en/error-log/</a></div>
+</div>
+</section>
+<section id="ita-api-organization">
+<h2>ita-api-organization<a class="headerlink" href="#ita-api-organization" title="この見出しへのパーマリンク">¶</a></h2>
 </section>
 </section>
 
