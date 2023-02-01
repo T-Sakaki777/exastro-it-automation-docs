@@ -1,12 +1,22 @@
 
 $(function () {
 
+  $("#multiColumnIndex li>a").each(function(){
+    var text = $(this).text();
+   $(this).text(text.replace(/^([0-9]+\.) /,''));
+  });
+
   $('#menuButton').on('click', function () {
     $('#sideMenu').toggleClass('on');
   });
 
-  $('#tocButton').on('click', function () {
-    $('#tableOfContents').toggleClass('on');
+  $(document).click(function(event){
+    var target = $(event.target);
+    if(target[0].id === "tocButton"){
+      $('#tableOfContents').toggleClass('on');
+    }else{
+      $('#tableOfContents').removeClass('on');
+    }
   });
 
   /*
