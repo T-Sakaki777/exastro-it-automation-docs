@@ -153,11 +153,12 @@
 <li><a class="reference internal" href="#">ログ一覧</a><ul>
 <li><a class="reference internal" href="#platform-job">platform-job</a></li>
 <li><a class="reference internal" href="#platform-api">platform-api</a></li>
-<li><a class="reference internal" href="#platform-web">platform-web</a></li>
+<li><a class="reference internal" href="#platform-webita-web-server">platform-web・ita-web-server</a></li>
 <li><a class="reference internal" href="#platform-auth">platform-auth</a></li>
 <li><a class="reference internal" href="#keycloak">keycloak</a></li>
 <li><a class="reference internal" href="#platform-db">platform-db</a></li>
 <li><a class="reference internal" href="#ita-api-organization">ita-api-organization</a></li>
+<li><a class="reference internal" href="#ita-api-admin">ita-api-admin</a></li>
 </ul>
 </li>
 </ul>
@@ -381,8 +382,8 @@
 </tbody>
 </table>
 </section>
-<section id="platform-web">
-<h2>platform-web<a class="headerlink" href="#platform-web" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="platform-webita-web-server">
+<h2>platform-web・ita-web-server<a class="headerlink" href="#platform-webita-web-server" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">デフォルトのapacheログ形式になっています。</div>
 <div class="line">設定内容は以下の通りです。</div>
@@ -404,8 +405,8 @@
 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36&quot;
 </pre></div>
 </div>
-<table class="docutils align-left" id="id2">
-<caption><span class="caption-number">表 61 </span><span class="caption-text">commonでログ保存を指定した場合</span><a class="headerlink" href="#id2" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id4">
+<caption><span class="caption-number">表 61 </span><span class="caption-text">commonでログ保存を指定した場合</span><a class="headerlink" href="#id4" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 23%" />
@@ -556,8 +557,8 @@
 <div class="line-block">
 <div class="line">combinedフォーマットは、commonフォーマットに以下の項目が追加されています。</div>
 </div>
-<table class="docutils align-left" id="id3">
-<caption><span class="caption-number">表 62 </span><span class="caption-text">combinedフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id3" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id5">
+<caption><span class="caption-number">表 62 </span><span class="caption-text">combinedフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id5" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 23%" />
@@ -623,8 +624,8 @@
 <div class="line-block">
 <div class="line">combinedioフォーマットは、combinedフォーマットに以下の項目が追加されています。</div>
 </div>
-<table class="docutils align-left" id="id4">
-<caption><span class="caption-number">表 63 </span><span class="caption-text">combinedioフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id4" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id6">
+<caption><span class="caption-number">表 63 </span><span class="caption-text">combinedioフォーマットでログ保存を指定した場合</span><a class="headerlink" href="#id6" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 23%" />
@@ -865,6 +866,97 @@
 </section>
 <section id="ita-api-organization">
 <h2>ita-api-organization<a class="headerlink" href="#ita-api-organization" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>形式：%(asctime)s %(levelname)s  &lt;フリーログ&gt;
+例　：[2023-01-19 12:18:25,940][INFO] AppLog instance(stdAppLogger) is created
+</pre></div>
+</div>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 23%" />
+<col style="width: 31%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">フォーマット文字列</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">フォーマットの意味</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">ログの例</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">備考</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">%(asctime)s</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">日付</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">[2023-01-19 12:18:25,940]</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">%(levelname)s</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログレベル</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">INFO</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ERROR, INFO, DEBUG が基本的なログレベル</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">&lt;フリーログ&gt;</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">任意</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">AppLog instance(stdAppLogger) is created</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">ログによって形式が変わります。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ita-api-admin">
+<h2>ita-api-admin<a class="headerlink" href="#ita-api-admin" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>形式： %(asctime)s %(levelname)s (%(userid)s) &lt;フリーログ&gt;
+例　：[2023-01-05 18:05:22,875][INFO] [USER_ID:efb59f05-6f31-47d6-b28e-0f9ee236534e] [ts=2023-01-05T09:05:22.756Z][api-start]url: POST:http://ita-api-admin:8070/api/organizations/org1/ita/
+</pre></div>
+</div>
 </section>
 </section>
 
