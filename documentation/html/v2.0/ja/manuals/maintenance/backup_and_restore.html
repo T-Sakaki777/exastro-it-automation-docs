@@ -256,7 +256,7 @@
 <div class="line">作業前のレプリカ数の確認をし、状態を記録します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-number">リスト 52 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id10" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 65 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id10" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{range .items[*]}{@.metadata.name}{&quot;\t&quot;}{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>&gt;<span class="w"> </span>before_replica_count_<span class="sb">`</span>date<span class="w"> </span>+<span class="s2">&quot;%Y%m%d-%H%M%S&quot;</span><span class="sb">`</span>.tsv
 </pre></div>
 </div>
@@ -267,7 +267,7 @@
 <div class="line">リバースプロキシ (platform-auth) のレプリカ数を 0 に変更し、エンドユーザーからのアクセスを制限します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-number">リスト 53 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id11" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 66 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id11" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>platform-auth<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 </pre></div>
 </div>
@@ -278,7 +278,7 @@
 <div class="line">バックヤード処理 (ita-by-***) のレプリカ数を 0 に変更し、データベースの更新を停止します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-number">リスト 54 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 67 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-execute<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-legacy-role-vars-listup<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-towermaster-sync<span class="w"> </span>-n<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
@@ -296,7 +296,7 @@ kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span clas
 <div class="line">メンテナンス用コンテナを作成します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-number">リスト 55 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 68 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>cat<span class="w"> </span><span class="s">&lt;&lt;_EOF_ | kubectl apply -f - -n exastro</span>
 <span class="linenos"> 2</span><span class="s">apiVersion: v1</span>
 <span class="linenos"> 3</span><span class="s">kind: Pod</span>
@@ -360,7 +360,7 @@ kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span clas
 <div class="line">バックアップを取得します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-number">リスト 56 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 69 </span><span class="caption-text">実行結果</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>platform-db-backup<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;mysqldump -h ${DB_HOST} -u ${DB_ADMIN_USER} -p${DB_ADMIN_PASSWORD} --all-databases&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>mysqldump_platform-db_<span class="sb">`</span>date<span class="w"> </span>+<span class="s2">&quot;%Y%m%d-%H%M%S&quot;</span><span class="sb">`</span>.sql.gz
 </pre></div>
 </div>
