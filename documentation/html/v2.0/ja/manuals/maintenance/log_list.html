@@ -193,7 +193,7 @@
 <section id="id2">
 <h2><span class="section-number">1.1. </span>一般的なログ<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">基本的なログは以下の形式となっています。</div>
+<div class="line">一般的なログは以下の形式となっています。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-number">リスト 1.15 </span><span class="caption-text">形式</span><a class="headerlink" href="#id3" title="このコードへのパーマリンク">¶</a></div>
@@ -252,7 +252,7 @@
 </td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
-<div class="line">%(levelname)s</div>
+<div class="line">[%(levelname)s]</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -260,7 +260,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">INFO</div>
+<div class="line">[INFO]</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -269,7 +269,7 @@
 </td>
 </tr>
 <tr class="row-even"><td><div class="line-block">
-<div class="line">(%(userid)s)</div>
+<div class="line">[%(userid)s]</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -294,7 +294,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">[ts=2023-01-05T09:05:22.756Z][api-start]url: POST:http://ita-api-admin:8070/api/organizations/org1/ita/</div>
+<div class="line">AppLog instance(stdAppLogger) is created</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -304,9 +304,6 @@
 </tr>
 </tbody>
 </table>
-<div class="line-block">
-<div class="line">上記の形式に当てはまらないログのコンテナは以下に記載があります。</div>
-</div>
 </section>
 <section id="platform-jobplatform-api">
 <h2><span class="section-number">1.2. </span>platform-job・platform-api<a class="headerlink" href="#platform-jobplatform-api" title="この見出しへのパーマリンク">¶</a></h2>
@@ -706,7 +703,7 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id14">
 <div class="code-block-caption"><span class="caption-number">リスト 1.23 </span><span class="caption-text">例</span><a class="headerlink" href="#id14" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mi">2023</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">12</span> <span class="mi">09</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">49</span><span class="p">,</span><span class="mi">040</span> <span class="n">INFO</span>  <span class="p">[</span><span class="n">org</span><span class="o">.</span><span class="n">keycloak</span><span class="o">.</span><span class="n">events</span><span class="p">]</span> <span class="p">(</span><span class="n">default</span> <span class="n">task</span><span class="o">-</span><span class="mi">13</span><span class="p">)</span> <span class="nb">type</span><span class="o">=</span><span class="n">INTROSPECT_TOKEN</span><span class="p">,</span> <span class="n">realmId</span><span class="o">=</span><span class="n">org3</span><span class="p">,</span> <span class="n">clientId</span><span class="o">=</span><span class="n">system</span><span class="o">-</span><span class="n">org3</span><span class="o">-</span><span class="n">auth</span><span class="p">,</span> <span class="n">userId</span><span class="o">=</span><span class="n">null</span><span class="p">,</span> <span class="n">ipAddress</span><span class="o">=</span><span class="mf">172.18.0.14</span><span class="p">,</span> <span class="n">client_auth_method</span><span class="o">=</span><span class="n">client</span><span class="o">-</span><span class="n">secret</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2023</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">12</span> <span class="mi">09</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">49</span><span class="p">,</span><span class="mi">040</span> <span class="n">INFO</span>  <span class="p">[</span><span class="n">org</span><span class="o">.</span><span class="n">keycloak</span><span class="o">.</span><span class="n">events</span><span class="p">]</span> <span class="p">(</span><span class="n">default</span> <span class="n">task</span><span class="o">-</span><span class="mi">13</span><span class="p">)</span> <span class="nb">type</span><span class="o">=</span><span class="n">INTROSPECT_TOKEN</span><span class="p">,</span> <span class="n">realmId</span><span class="o">=</span><span class="n">org3</span><span class="p">,</span> <span class="n">clientId</span><span class="o">=</span><span class="n">system</span><span class="o">-</span><span class="n">org3</span><span class="o">-</span><span class="n">auth</span><span class="p">,</span> <span class="n">userId</span><span class="o">=</span><span class="n">null</span><span class="p">,</span> <span class="n">ipAddress</span><span class="o">=</span><span class="mf">172.18.0.14</span><span class="p">,</span> <span class="n">client_auth_method</span><span class="o">=</span><span class="n">client</span><span class="o">-</span><span class="n">secret</span>
 </pre></div>
 </div>
 </div>
@@ -814,7 +811,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">-</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -831,7 +828,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">-</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -848,7 +845,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line"><br /></div>
+<div class="line">-</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1009,7 +1006,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><div class="line-block">
-<div class="line">%(asctime)s</div>
+<div class="line">[%(asctime)s]</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1026,7 +1023,7 @@
 </td>
 </tr>
 <tr class="row-odd"><td><div class="line-block">
-<div class="line">%(levelname)s</div>
+<div class="line">[%(levelname)s]</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1034,7 +1031,7 @@
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">INFO</div>
+<div class="line">[INFO]</div>
 </div>
 </td>
 <td><div class="line-block">
@@ -1043,7 +1040,7 @@
 </td>
 </tr>
 <tr class="row-even"><td><div class="line-block">
-<div class="line">(%(userid)s)</div>
+<div class="line">[%(userid)s]</div>
 </div>
 </td>
 <td><div class="line-block">
