@@ -158,7 +158,7 @@ platform-web・ita-web-server
      - | 送信されたバイト数
      - | 9817
      - |
-  
+
 | combinedフォーマットは、commonフォーマットに以下の項目が追加されています。
 
 .. list-table:: combinedフォーマットでログ保存を指定した場合
@@ -217,10 +217,12 @@ Keycloak
 
    %d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c] (%t) %s%e%n
 
+
 .. code-block:: 
    :caption: 例
 
    2023-01-12 09:21:49,040 INFO  [org.keycloak.events] (default task-13) type=INTROSPECT_TOKEN, realmId=org3, clientId=system-org3-auth, userId=null, ipAddress=172.18.0.14, client_auth_method=client-secret
+
 
 .. list-table:: 
    :widths: 15 15 20 20
