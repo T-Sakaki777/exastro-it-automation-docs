@@ -5,7 +5,7 @@ Organization (オーガナイゼーション)
 はじめに
 ========
 
-| 本章では、Exastro Suite における Organization (オーガナイゼーション) について説明します。
+| 本書では、Exastro Suite における Organization (オーガナイゼーション) について説明します。
 
 
 オーガナイゼーションとは
