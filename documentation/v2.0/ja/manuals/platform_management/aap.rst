@@ -5,7 +5,7 @@ Ansible Automation Platform 連携
 目的
 ====
 
-| 本項では、システム管理者がオーガナイゼーションに所属するユーザーに対して、Ansible Core もしくは Ansible Automation Controller の利用を制御するための方法について紹介します。
+| 本書では、システム管理者がオーガナイゼーションに所属するユーザーに対して、Ansible Core もしくは Ansible Automation Controller の利用を制御するための方法について紹介します。
 
 
 Ansible Automation Controller の登録

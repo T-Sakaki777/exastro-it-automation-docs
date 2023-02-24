@@ -5,7 +5,7 @@ Workspase (ワークスペース)
 はじめに
 ========
 
-| 本章では、Exastro Suite における Workspase (ワークスペース) について説明します。
+| 本書では、Exastro Suite における Workspase (ワークスペース) について説明します。
 
 
 ワークスペースとは
