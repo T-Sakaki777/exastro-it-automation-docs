@@ -5,7 +5,7 @@ Azure Kubernetes Service
 はじめに
 ========
 
-| 本章では、Exastro IT Automation のデプロイ先となる、Azure Kubernetes Service (AKS) クラスタにおけるセットアップ方法について説明します。
+| 本書では、Exastro IT Automation のデプロイ先となる、Azure Kubernetes Service (AKS) クラスタにおけるセットアップ方法について説明します。
 
 
 前提条件

@@ -21,7 +21,7 @@ Exastro IT Automation on Kubernetes
 目的
 ====
 
-| 本章では、Exastro IT Automation を利用する際に必要となる、Exastro Platform および Exastro IT Automation を導入する手順について説明します。
+| 本書では、Exastro IT Automation を利用する際に必要となる、Exastro Platform および Exastro IT Automation を導入する手順について説明します。
 
 前提条件
 ========
