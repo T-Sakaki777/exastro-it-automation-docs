@@ -262,7 +262,7 @@ Keycloak
      - | -
      - | 
 
-| keycloakのログの詳細は下記URLをご参照ください。
+| Keycloakのログの詳細は下記URLをご参照ください。
 | https://www.keycloak.org/server/logging
 
 platform-db
