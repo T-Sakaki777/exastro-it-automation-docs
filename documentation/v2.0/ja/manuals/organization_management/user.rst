@@ -56,7 +56,7 @@
 
 手順
 ~~~~
-1. | keycloak管理コンソール(masterレルム)に接続します。
+1. | Keycloak管理コンソール(masterレルム)に接続します。
    
 - | 接続URL
   
@@ -65,13 +65,13 @@
    {システム管理者用サイトアドレス}/auth/admin/master/console/#/realms/master/users
 
 
-2. | keycloakのログイン画面から登録済みのシステム管理者アカウントでログインします。
+2. | Keycloakのログイン画面から登録済みのシステム管理者アカウントでログインします。
 
 .. figure:: /images/ja/manuals/platform/keycloak/keycloak_login.png
    :width: 600px
-   :alt: keycloakログイン画面 
+   :alt: Keycloakログイン画面 
 
-   keycloakログイン画面
+   Keycloakログイン画面
 
 .. note:: | システム管理者アカウントを未登録の場合は、インストール時に platform-secret.yaml に設定し、keycloakの環境変数へ登録されている値でログインします。
    
@@ -90,7 +90,7 @@
    :width: 600px
    :alt: keycloak管理コンソール_ユーザー画面 
 
-   keycloak管理コンソール_ユーザー画面
+   Keycloak管理コンソール_ユーザー画面
 
 
 - | :menuselection:`「ユーザー追加」画面` で、登録するシステム管理者の情報を入力し :guilabel:`保存` ボタンをクリックします。
@@ -163,13 +163,13 @@
       | ユーザー管理権限を有するロールは以下の3つです。
       | _orgnization-manager,_orgnization-user-manager,_orgnization-user-role-manager
 
-#. | keycloakのユーザー画面が表示されるので、 :guilabel:`ユーザーの追加` ボタンをクリックします。
+#. | Keycloakのユーザー画面が表示されるので、 :guilabel:`ユーザーの追加` ボタンをクリックします。
 
    .. figure:: /images/ja/manuals/platform/keycloak/keycloak_management_console.png
       :width: 600px
       :align: left
 
-#. | keycloakのユーザーの追加画面が表示されるので、ユーザーの情報を入力して :guilabel:`保存` ボタンをクリックします。
+#. | Keycloakのユーザーの追加画面が表示されるので、ユーザーの情報を入力して :guilabel:`保存` ボタンをクリックします。
 
    .. figure:: /images/ja/manuals/platform/keycloak/keycloak_add_user_member01.png
       :width: 600px
